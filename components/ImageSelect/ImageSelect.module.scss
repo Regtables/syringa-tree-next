@@ -1,0 +1,37 @@
+.container{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.activeImage{
+  margin: 0 auto;
+}
+
+.activeImage__image{
+  display: flex;
+  justify-content: center;
+}
+
+.activeImage__image{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  height: 300px;
+  width: 500px;
+}
+
+.images{
+  width: 70%;
+}
+
+.images__grid{
+  height: 35vh;
+  overflow-x: scroll;
+}
+
+// .images_item{
+//   width: 50px;
+//   height: 50px;
+// }
