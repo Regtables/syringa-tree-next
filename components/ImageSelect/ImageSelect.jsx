@@ -29,7 +29,7 @@ const ImageSelect = ({ images }) => {
 
         <div className = {styles.images}>
           {images.map((image, i) => (
-            <div className= {styles.image} onClick = {() => setActiveImage(image)}>
+            <div className= {styles.image} onClick = {() => setActiveImage(image)} key = {i}>
               <ImageTile image = {image}/>      
             </div>
           ))}

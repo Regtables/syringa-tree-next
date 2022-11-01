@@ -24,7 +24,7 @@ const HeroTile = ({ tile }) => {
       </div>
       <div className= {styles.text}>
         <div className = {styles.testimonial}>
-          <h3>'{testimonial}'</h3>
+          <h3>{`'${testimonial}'`}</h3>
         </div>
         <div className = {styles.title}>
           <h1>{title}</h1>
