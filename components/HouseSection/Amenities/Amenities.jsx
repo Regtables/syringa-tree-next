@@ -8,9 +8,9 @@ import { BsDoorOpen } from 'react-icons/bs'
 
 import styles from './Amenities.module.scss'
 
-const ICONS = [
-  <BiBed />, <BiBath />, <TbToolsKitchen2 />, <IoWifiSharp />, 
-]
+// const ICONS = [
+//   <BiBed />, <BiBath />, <TbToolsKitchen2 />, <IoWifiSharp />, 
+// ]
 
 const Amenities = ({ amenities }) => {
 
@@ -20,7 +20,7 @@ const Amenities = ({ amenities }) => {
         <p className= {styles.feature}><BiBed /> 2 bedrooms</p>
       </Grid>
       <Grid item sm = {6}>
-      <p className= {styles.feature}><BiBath /> 1 bathroom</p>
+        <p className= {styles.feature}><BiBath /> 1 bathroom</p>
       </Grid>
       <Grid item sm = {6}>
        <p className= {styles.feature}> <TbToolsKitchen2 /> self catering</p>
@@ -32,7 +32,7 @@ const Amenities = ({ amenities }) => {
         <p className= {styles.feature}> <AiOutlineCar /> parking</p>
       </Grid>
       <Grid item sm = {6}>
-      <p className= {styles.feature}> <BsDoorOpen /> seperate entrance</p>
+        <p className= {styles.feature}> <BsDoorOpen /> seperate entrance</p>
       </Grid>
     </Grid>
   )
