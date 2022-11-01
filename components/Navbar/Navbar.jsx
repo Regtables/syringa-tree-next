@@ -50,7 +50,7 @@ const Navbar = () => {
         // navbar.style.backgroundColor = 'transparent'
         navbar.style.opacity = '0'
       } else {
-        navbar.style.backgroundColor = 'rgb(180, 152, 115)'
+        navbar.style.backgroundColor = 'rgb(180, 152, 115, 1)'
         navbar.style.opacity = '1'
       }
     }

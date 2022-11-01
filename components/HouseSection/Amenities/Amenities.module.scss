@@ -1,0 +1,16 @@
+.container{
+  svg{
+    width: 25px;
+    height: 25px;
+    margin-right: 1rem;
+    color: var(--color-primary);
+
+    // margin: 0 1rem 1rem  1rem;
+  }
+}
+
+.feature{
+  font-family: var(--font-family);
+  display: flex;
+  align-items: center;
+}

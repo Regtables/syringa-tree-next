@@ -4,6 +4,8 @@ import ImageSelect from '../ImageSelect/ImageSelect'
 
 import styles from './HouseSection.module.scss'
 
+import Amenities from './Amenities/Amenities'
+
 const HouseSection = ({ section }) => {
   const { heading, slogan, images, description } = section
   return (
@@ -26,7 +28,7 @@ const HouseSection = ({ section }) => {
 
           <div className= {styles.right}>
             <div className= {styles.features}>
-
+              <Amenities />
             </div>
             <div className= {styles.description}>
               <p>{description}</p>
@@ -35,7 +37,7 @@ const HouseSection = ({ section }) => {
         </div>
 
         <div className= {styles.price}>
-          <h4>From</h4>
+          <h4>From R2500 per night</h4>
         </div>
 
         <div className= {styles.book}>
