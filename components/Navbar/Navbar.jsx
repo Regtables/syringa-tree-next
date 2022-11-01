@@ -71,7 +71,7 @@ const Navbar = () => {
       <div className= {styles.links}>
         {LINKS.map((link, i) => (
           <div className= {styles.link}>
-            <p>{link.link}</p>
+            <a href = {`#${link.link}`}><p>{link.link}</p></a>
           </div>
         ))}
         <div className= {styles.book}>
