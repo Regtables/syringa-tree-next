@@ -47,11 +47,11 @@ const Navbar = () => {
       const curScrollPos = window.scrollY
 
       if(prevScrollPosition < curScrollPos){
-        navbar.style.backgroundColor = 'transparent'
-        // navbar.style.opacity = '0'
+        // navbar.style.backgroundColor = 'transparent'
+        navbar.style.opacity = '0'
       } else {
         navbar.style.backgroundColor = 'rgb(180, 152, 115)'
-        // navbar.style.opacity = '1'
+        navbar.style.opacity = '1'
       }
     }
 

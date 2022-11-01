@@ -12,7 +12,7 @@ const ImageSelect = ({ images }) => {
 
   return (
     <div className= {styles.container}>
-      {/* <div className = {styles.activeImage}>
+      <div className = {styles.activeImage}>
         <div className= {styles.activeImage__image}>
           <ImageTile image={activeImage}/>
         </div>
@@ -22,20 +22,14 @@ const ImageSelect = ({ images }) => {
         <div className= {styles.next}>
 
         </div>
-      </div> */}
+      </div>
 
       <div className = {styles.images}>
-        <Grid 
-          container 
-          className = {styles.images__grid}
-          spacing = {0.5}
-        >
-          {images.map((image, i) => (
-            <Grid item className= {styles.images__item} sm = {1.5} key = {i}>
-              <ImageTile image = {image}/>
-            </Grid>
-          ))}
-        </Grid>
+        {images.map((image, i) => (
+          <div className= {styles.image} onClick = {() => setActiveImage(image)}>
+            <ImageTile image = {image}/>      
+          </div>
+        ))}
       </div>
     </div>
   )
