@@ -18,7 +18,7 @@ export default function Home({ heroImages, sections }) {
       </header>
       <main>
         {sections.map((section, i) => (
-          <section id= {section.section}>
+          <section id= {section.section} key = {i}>
             <HouseSection 
               section={section}
             />
