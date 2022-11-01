@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Button } from '@mui/material'
 import { GiPineTree } from 'react-icons/gi'
 import styles from './Navbar.module.scss'
@@ -23,8 +23,47 @@ const LINKS = [
 ]
 
 const Navbar = () => {
+  const [prevScrollPosition, setPrevScrollPosition] = useState()
+
+
+  useEffect(() => {
+    const navbar =  document.getElementById('navbar');
+    if(window.scrollY === 0){
+      // navbar.style.opacity = '1'
+      navbar.style.backgroundColor = 'transparent'
+      
+    }
+
+    const handleScroll = () => {
+      setPrevScrollPosition(window.scrollY)
+    }
+
+    handleScroll();
+    window.addEventListener('scroll', handleScroll)
+
+    setPrevScrollPosition(window.scrollY)
+
+    window.onscroll = function(){
+      const curScrollPos = window.scrollY
+
+      if(prevScrollPosition < curScrollPos){
+        navbar.style.backgroundColor = 'transparent'
+        // navbar.style.opacity = '0'
+      } else {
+        navbar.style.backgroundColor = 'rgb(180, 152, 115)'
+        // navbar.style.opacity = '1'
+      }
+    }
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll )
+    }
+
+  })
+
+
   return (
-    <div className= {styles.container}>
+    <div className= {styles.container} id = 'navbar'>
       <div className= {styles.logo}>
         <h3>Syringa tree </h3>
         <GiPineTree />

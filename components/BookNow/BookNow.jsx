@@ -11,7 +11,7 @@ const BookNow = () => {
       borderRadius: '20px',
       padding: '0.5rem 2rem'
     }}>
-      book now
+      request booking
     </Button>
   )
 }
