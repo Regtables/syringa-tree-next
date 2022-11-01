@@ -12,7 +12,7 @@ const HouseSection = ({ section }) => {
         <h2>{heading}</h2>
         <h4>{slogan}</h4>
       </header>
-      <main className= {styles.contnet}>
+      <main className= {styles.content}>
         <div className= {styles.imageSelect}>
           <ImageSelect
             images = {images}
