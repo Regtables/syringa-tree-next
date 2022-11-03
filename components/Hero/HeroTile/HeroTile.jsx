@@ -32,7 +32,7 @@ const HeroTile = ({ tile }) => {
         <div className= {styles.description}>
           <h4>{description}</h4>
         </div>
-        <BookNow />
+        {/* <BookNow /> */}
       </div>
     </div>
   )

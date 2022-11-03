@@ -11,7 +11,7 @@ export default function Home({ heroImages, sections }) {
   
   return (
     <div className={styles.container}>
-      <header>
+      <header id = 'home'>
         <Hero
           images = {heroImages}
         />
@@ -31,6 +31,9 @@ export default function Home({ heroImages, sections }) {
         <section>
           contact
         </section>
+        <footer>
+          footer
+        </footer>
       </main>
     </div>
   )
