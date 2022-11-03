@@ -36,9 +36,9 @@ const HouseSection = ({ section }) => {
           </div>
         </div>
 
-        <div className= {styles.price}>
+        {/* <div className= {styles.price}>
           <h4>From R2500 per night</h4>
-        </div>
+        </div> */}
 
         <div className= {styles.book}>
           <BookNow />

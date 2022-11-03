@@ -26,7 +26,8 @@ a {
 }
 
 :root{
-  --color-primary: #0d442e;
+  /* --color-primary: #0d442e; */
+  --color-primary: rgb(147, 157, 147);
   --color-offWhite: #f5f5f5;
   --color-offBlack:  #212427;
 

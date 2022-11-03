@@ -5,9 +5,9 @@ import styles from './Navbar.module.scss'
 import BookNow from '../BookNow/BookNow'
 
 const LINKS = [
-  {
-    link: 'home'
-  },
+  // {
+  //   link: 'home'
+  // },
   {
     link: 'main house'
   },
@@ -50,7 +50,9 @@ const Navbar = () => {
         // navbar.style.backgroundColor = 'transparent'
         navbar.style.opacity = '0'
       } else {
-        navbar.style.backgroundColor = 'rgb(180, 152, 115, 1)'
+        // navbar.style.backgroundColor = 'rgb(180, 152, 115, 1)'
+        // navbar.style.backgroundColor = 'rgb(188, 174, 197)'
+        navbar.style.backgroundColor = 'var(--color-primary)'
         navbar.style.opacity = '1'
       }
     }
@@ -66,7 +68,7 @@ const Navbar = () => {
     <div className= {styles.container} id = 'navbar'>
       <div className= {styles.logo}>
         <h3>Syringa tree </h3>
-        <GiPineTree />
+        {/* <GiPineTree /> */}
       </div>
       <div className= {styles.links}>
         {LINKS.map((link, i) => (
