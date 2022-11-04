@@ -10,7 +10,7 @@ const HouseSection = ({ section }) => {
   const { heading, slogan, images, description } = section
   return (
     <div className= {`${styles.container} section__padding`}>
-      <header className= {styles.header}>
+      <header className= 'heading'>
         <h2>{heading}</h2>
       </header>
 
