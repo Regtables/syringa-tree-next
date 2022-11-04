@@ -24,6 +24,15 @@ body {
 		font-weight: 600;
 		margin-bottom: 0;
 		margin-top: 1rem;
+		
+	}
+
+	@media screen and (max-width: 450px) {
+		margin: 2rem 0;
+		h2{
+			font-size: 52px;
+			text-align: center;
+		}
 	}
 }
 
@@ -33,6 +42,10 @@ body {
 
 .section__padding{
   padding: 0 4%;
+
+	@media screen and (max-width: 450px) {
+		padding: 0 2%;
+	}
 }
 
 a {

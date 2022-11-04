@@ -8,32 +8,24 @@ const QuiltedImageList = ({ images }) => {
   const { image1, image2, image3, image4, image5, image6 } = images
   return (
     <div className= {styles.container}>
-      <Grid container spacing = {1} sx = {{height: '100%'}}>
-        <Grid item sm = {12} >
+      <div className= {styles.wrapper}>
+        <div className = {styles.top} >
           <ImageTile image={image1} />
-        </Grid>
-        <Grid item sm = {6}>
-          <ImageTile image = {image2} />
-        </Grid>
-        <Grid item sm = {6}>
-          <Grid container sm = {12} sx = {{height: '100%'}}>
-      
-              <Grid item sm = {12}>
-                <ImageTile image = {image3} />
-              </Grid>
-              <Grid item sm = {12}>
-                <ImageTile image = {image4} />
-              </Grid>
-              {/* <Grid item sm = {6}>
-                <ImageTile image = {image5} />
-              </Grid>
-              <Grid item sm = {6}>
-                <ImageTile image = {image6} />
-              </Grid> */}
-        
-          </Grid>
-        </Grid>
-      </Grid>
+        </div>
+        <div className = {styles.bottom}>
+          <div className = {styles.bottom_left}>
+            <ImageTile image = {image2} />
+          </div>
+          <div className = {styles.bottom_right}>
+            <div className = {styles.bottom_right_top}>
+              <ImageTile image= {image5} />
+            </div>
+            <div className = {styles.bottom_right_bottom}>
+              <ImageTile image = {image4} />
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   )
 }

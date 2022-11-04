@@ -15,7 +15,7 @@ import styles from './Amenities.module.scss'
 const Amenities = ({ amenities }) => {
 
   return (
-    <Grid container className= {styles.container} justifyContent = 'center' >
+    <Grid container className= {styles.container} justifyContent = 'space-between' >
       <Grid item sm = {6}>
         <p className= {styles.feature}><BiBed /> 2 bedrooms</p>
       </Grid>
