@@ -20,6 +20,8 @@ const ImagePreview = ({ togglePreview, setTogglePreview, activeImage}) => {
           <Image 
             { ...imageProps }
             layout = 'fill'
+            objectFit='cover'
+            objectPosition={'center center'}
           />
         </div>
       </div>
