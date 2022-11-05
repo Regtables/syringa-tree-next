@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { Button } from '@mui/material'
 import { GiPineTree } from 'react-icons/gi'
+import { FiMenu} from 'react-icons/fi'
 import styles from './Navbar.module.scss'
 import BookNow from '../BookNow/BookNow'
 
@@ -31,6 +32,7 @@ const Navbar = () => {
     if(window.scrollY === 0){
       // navbar.style.opacity = '1'
       navbar.style.backgroundColor = 'transparent'
+      document.getElementById('menu-icon').style.color = 'var(--color-primary)'
       
     }
 
@@ -54,6 +56,7 @@ const Navbar = () => {
         // navbar.style.backgroundColor = 'rgb(188, 174, 197)'
         navbar.style.backgroundColor = 'var(--color-primary)'
         navbar.style.opacity = '1'
+        document.getElementById('menu-icon').style.color = 'white'
       }
     }
 
@@ -78,6 +81,11 @@ const Navbar = () => {
         ))}
         <div className= {styles.book}>
           <BookNow />
+        </div>
+      </div>
+      <div className= {styles.menu}>
+        <div className= {styles.icon}>
+          <FiMenu id= 'menu-icon'/>
         </div>
       </div>
     </div>

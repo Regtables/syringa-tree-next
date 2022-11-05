@@ -7,8 +7,10 @@ import { client } from '../utils/client'
 import Hero from '../components/Hero/Hero'
 import HouseSection from '../components/HouseSection/HouseSection'
 import Location from '../components/Location/Location'
+import Contact from '../components/Contact/Contact'
+import Footer from '../components/Footer/Footer'
 
-export default function Home({ heroImages, sections, location }) {
+export default function Home({ heroImages, sections, location, contact }) {
   
   return (
     <div className={styles.container}>
@@ -31,11 +33,11 @@ export default function Home({ heroImages, sections, location }) {
         </section>
 
         <section>
-          contact
+          <Contact contact = {contact} />
         </section>
 
         <footer>
-          footer
+          <Footer />
         </footer>
       </main>
     </div>
@@ -52,11 +54,15 @@ export const getStaticProps = async () => {
   const locationQuery = '*[_type == "location"]'
   const locationData = await client.fetch(locationQuery)
 
+  const contactQuery = '*[_type == "contact"]'
+  const contactData = await client.fetch(contactQuery)
+
   return {
     props: {
       heroImages: heroData,
       sections: sectionsData,
-      location: locationData[0]
+      location: locationData[0],
+      contact: contactData[0]
     },
     revalidate: 1
   }

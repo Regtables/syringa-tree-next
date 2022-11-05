@@ -49,3 +49,11 @@
     font-weight: 500;
   }
 }
+
+.book{
+  display: none;
+
+  @media screen and (max-width: 450px) {
+    display: block;   
+  }
+}
