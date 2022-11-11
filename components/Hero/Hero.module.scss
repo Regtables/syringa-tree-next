@@ -1,4 +1,31 @@
 .container{
   width: 100%;
   height: 100vh;
+  position: relative;
+}
+
+.counter{
+  position:absolute;
+  bottom: 5%;
+  display: flex;
+  left: 47%;
+
+  .count{
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    background-color: rgb(80, 80, 80);
+    opacity: 0.8;
+    margin-right: 0.5rem;
+    cursor: pointer;
+    z-index: 3;
+
+    &.activeIndex{
+      background-color: var(--color-primary);
+    }
+  }
+
+  @media screen and (max-width: 450px) {
+    left: 41%;
+  }
 }

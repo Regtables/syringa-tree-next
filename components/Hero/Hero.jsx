@@ -5,52 +5,60 @@ import styles from './Hero.module.scss'
 
 import HeroTile from './HeroTile/HeroTile'
 
-// const TILE = {
-//   image: '/lounge-view.jpg'
-// }
-
 const Hero = ({ images }) => {
   const [index, setIndex] = useState(0)
   const [activeTile, setActiveTile] = useState(images[index])
   const [animateHero, setAnimateHero] = useState({})
 
-  // useEffect(() => {
-  //   // console.log(index)
-  //   // setAnimateHero({opacity: 0})
-
-  //   setActiveTile(images[index])
-
-  //   // setTimeout(() => {
-  //   //   setAnimateHero({opacity: 1})
-  //   // }, 300);
-  //   return () => {
-  //     clearInterval(slide)
-  //   }
-  // }, [index])
-
-  // const slide = setInterval(() => {
-  //   if(index < images.length-1){
-  //     setIndex(index + 1);
-  //     setActiveTile(index)
+  const slider = () => {
+    if(index <= images.length-1){
+      setIndex(index + 1);    
+    } 
     
-  //     return
-  //   } 
-    
-  //   else if(index === images.length-1){
-  //     setIndex(0)
-      
-  //     setActiveTile(images[0])
-  //     return
-     
-  //   } 
-  // }, 6000);
+    if(index === images.length-1){
+      setIndex(0)     
+    } 
+  }
 
+  useEffect(() => {
+    const image = images.filter((heroImage) => heroImage.imageIndex === index)[0]
+    console.log(image)
+    setAnimateHero({opacity: 0})
+    setActiveTile(image)
+
+    setTimeout(() => {
+      setAnimateHero({opacity: 1})
+    }, 200);
+
+  }, [index])
+
+  useEffect(() => {
+    const slide = setInterval(() => {
+      slider()
+    }, 6000);
+
+    return () => {
+      clearInterval(slide)
+    }
+  }, [index])
+
+  const handleCountClick = (i) => {
+    setIndex(i)
+  }
 
   return (
     <motion.div className= {styles.container} id = 'home' animate = {animateHero}>
       <HeroTile 
         tile = {activeTile}
       />
+      <div className = {styles.counter}>
+        {images.map((count, i) => (
+          <div 
+            className = {`${styles.count} ${i === index ? styles.activeIndex : ''}`} 
+            onClick = {() => handleCountClick(i)}
+          />
+        ))}
+      </div>
     </motion.div>
   )
 }
