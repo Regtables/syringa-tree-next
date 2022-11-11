@@ -32,6 +32,10 @@
     font-size: 22px;
     color: var(--color-offWhite);
 
+    @media screen and (max-width: 1100px) {
+      font-size: 18px;
+    }
+
     @media screen and (max-width: 450px) {
       font-size: 18px;
     }
@@ -60,13 +64,20 @@
       }
     }
 
+    @media screen and (max-width: 1100px) {
+      p{
+        font-size: 13px;
+      }
+   
+    }
+
   }
   
   .book{
     margin-left: 1rem;
   }
 
-  @media screen and (max-width: 450px) {
+  @media screen and (max-width: 1000px) {
     display: none;
 
     .book{
@@ -86,7 +97,7 @@
     }
   }
 
-  @media screen and (max-width: 450px) {
+  @media screen and (max-width: 1000px) {
     display: block;
   }
 }
@@ -106,7 +117,7 @@
   z-index: 10;
 
 
-  @media screen and (max-width: 450px) {
+  @media screen and (max-width: 1000px) {
     display: block;
   }
 

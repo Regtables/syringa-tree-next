@@ -13,51 +13,58 @@ import Footer from '../components/Footer/Footer'
 
 import MotionWrapper from '../wrappers/MotionWrapper'
 
-export default function Home({ heroImages, sections, location, contact, about }) {
+export default function Home({ heroImages, sections, location, contact, about, seo }) {
   
   return (
-    <div className={styles.container} id = 'home'>
-      <header id = 'home'>
-        <MotionWrapper>
-          <Hero
-            images = {heroImages}
-          />
-        </MotionWrapper>
-      </header>
-      <main>
-        {sections.map((section, i) => (
-          <section id= {section.section} key = {i}>
+    <>
+      <Head>
+        <title>{seo.title}</title>
+        <meta name = 'description' content= {seo.description}/>
+        <meta name = 'keywords' content = {seo.keywords} />
+      </Head>
+      <div className={styles.container} id = 'home'>
+        <header id = 'home'>
+          <MotionWrapper>
+            <Hero
+              images = {heroImages}
+            />
+          </MotionWrapper>
+        </header>
+        <main>
+          {sections.map((section, i) => (
+            <section id= {section.section} key = {i}>
+              <MotionWrapper>
+                <HouseSection 
+                  section={section}
+                />
+              </MotionWrapper>
+            </section>
+          ))}
+        
+          <section id = 'location'>
             <MotionWrapper>
-              <HouseSection 
-                section={section}
-              />
+              <Location location = {location} />
             </MotionWrapper>
           </section>
-        ))}
-       
-        <section id = 'location'>
-          <MotionWrapper>
-            <Location location = {location} />
-          </MotionWrapper>
-        </section>
 
-        <section id = 'contact-us'>
-          <MotionWrapper>
-            <Contact contact = {contact} />
-          </MotionWrapper>
-        </section>
+          <section id = 'contact-us'>
+            <MotionWrapper>
+              <Contact contact = {contact} />
+            </MotionWrapper>
+          </section>
 
-        <section id = 'about-us'>
-          <MotionWrapper>
-            <AboutUs aboutUs={about}/>
-          </MotionWrapper>
-        </section>
-        
-        <footer>
-          <Footer />
-        </footer>
-      </main>
-    </div>
+          <section id = 'about-us'>
+            <MotionWrapper>
+              <AboutUs aboutUs={about}/>
+            </MotionWrapper>
+          </section>
+          
+          <footer>
+            <Footer />
+          </footer>
+        </main>
+      </div>
+    </>
   )
 }
 
@@ -77,13 +84,17 @@ export const getStaticProps = async () => {
   const aboutQuery = '*[_type == "aboutUs"]'
   const aboutData = await client.fetch(aboutQuery)
 
+  const seoQuery = '*[_type == "seo"]'
+  const seoData = await client.fetch(seoQuery)
+
   return {
     props: {
       heroImages: heroData,
       sections: sectionsData,
       location: locationData[0],
       contact: contactData[0],
-      about: aboutData[0]
+      about: aboutData[0],
+      seo: seoData[0]
     },
     revalidate: 1
   }
