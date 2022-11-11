@@ -1,30 +1,49 @@
 import React, { useEffect, useState } from 'react'
 import { Button } from '@mui/material'
-import { GiPineTree } from 'react-icons/gi'
+import { AiOutlineHome, AiOutlinePhone, AiOutlineUser, AiOutlineCloseCircle } from 'react-icons/ai'
+import { BiHomeCircle } from 'react-icons/bi'
+import { GoLocation } from 'react-icons/go'
 import { FiMenu} from 'react-icons/fi'
+import { motion } from 'framer-motion'
+import { IoIosCloseCircleOutline } from 'react-icons/io5'
+import { SlClose } from 'react-icons/sl'
+
 import styles from './Navbar.module.scss'
+
 import BookNow from '../BookNow/BookNow'
+
+
 
 const LINKS = [
   // {
   //   link: 'home'
   // },
   {
-    link: 'main house'
+    link: 'main house',
+    icon: <AiOutlineHome />
   },
   {
-    link: 'sea view'
+    link: 'sea view',
+    icon: <BiHomeCircle />
   },
   {
-    link: 'location'
+    link: 'location',
+    icon: <GoLocation />
   },
   {
-    link: 'contact'
+    link: 'contact',
+    icon: <AiOutlinePhone />
+  },
+  {
+    link: 'about us',
+    icon: <AiOutlineUser />
   }
 ]
 
 const Navbar = () => {
   const [prevScrollPosition, setPrevScrollPosition] = useState()
+  const [toggleMenu, setToggleMenu] = useState()
+  const [animateMenu, setAnimateMenu] = useState()
 
 
   useEffect(() => {
@@ -63,14 +82,31 @@ const Navbar = () => {
     return () => {
       window.removeEventListener('scroll', handleScroll )
     }
-
   })
+
+  useEffect(() => {
+    if(toggleMenu){
+      setAnimateMenu({x: ['400px', '0px'], display: 'block'})
+    }
+  }, [toggleMenu])
+
+  const handleMenuToggle = () => {
+    setToggleMenu(true)
+  }
+
+  const handleMenuClose = () => {
+    setAnimateMenu({x: ['0px', '400px']})
+
+    setTimeout(() => {
+      setToggleMenu(false)
+    }, 500);
+  }
 
 
   return (
     <div className= {styles.container} id = 'navbar'>
       <div className= {styles.logo}>
-        <h3>Syringa tree </h3>
+        <h3>Syringa tree Guest House</h3>
         {/* <GiPineTree /> */}
       </div>
       <div className= {styles.links}>
@@ -83,10 +119,61 @@ const Navbar = () => {
           <BookNow />
         </div>
       </div>
+
       <div className= {styles.menu}>
-        <div className= {styles.icon}>
+        <div className= {styles.icon} onClick = {handleMenuToggle}>
           <FiMenu id= 'menu-icon'/>
         </div>
+        {toggleMenu && (
+          <>
+            <motion.div 
+              className= {styles.menu_container} 
+              animate = {animateMenu}
+              transition = {{duration: 0.3}}  
+              initial = {{x: '500px'}}
+            >
+              <div className= {styles.mobile_heading}>
+                <h3>Syringa Tree Guest House</h3>
+                <div className= {styles.mobile_close} onClick = {handleMenuClose}>
+                  <p><SlClose /></p>
+                </div>
+              </div>
+              <div className = {styles.mobile_links}>
+                {LINKS.map((link, i) => (
+                  <div className = {styles.mobile_link}>
+                    <a href = {`#${link.link}`}>
+                      <h5>{link.icon}{link.link}</h5>
+                    </a>
+                  </div>  
+                ))}
+              </div>
+              <div className= {styles.mobile_book}>
+                {/* <BookNow /> */}
+                <Button 
+                  variant = 'contained' 
+                  sx = {{
+                    backgroundColor: '#f6f6f6',
+                    color: 'var(--color-primary)',
+                    boxShadow: 'none',
+                    fontSize: '16px',
+                    fontFamily: 'var(--font-family)',
+                    padding: '0.7rem 4rem',
+                    borderRadius: '30px',
+                    border: '2px solid #f6f6f6',
+
+                    "&:hover": {
+                      backgroundColor: 'var(--color-primary)',
+                      color: '#f6f6f6',
+                      boxShadow: 'none'
+                    }
+                  }}
+                >
+                  Book Now
+                </Button>
+              </div>
+            </motion.div>
+          </>
+        )}
       </div>
     </div>
   )

@@ -2,17 +2,48 @@
   height: 100%;
   padding: 2rem 1rem;
   border-radius: 10px;
-  background-color: rgba(112, 155, 136, 0.135);
+  // background-color: rgba(112, 155, 136, 0.135);
+  // background-color: var(--color-primary);
+  // background-color: rgba(112, 155, 136, 0.135);
+  background-color: rgb(189, 198, 189);
   outline: 1px solid #e3e3e3;
+
+  svg{
+    color: white;
+    height: 25px;
+    width: 25px;
+    cursor: pointer;
+  }
   // box-shadow: 0 4px 6px rgb(0 0 0 / 4%);
+}
+
+.activeImage{
+  position: relative;
+
+  .prev{
+    position: absolute;
+    top: 45%;
+    left: 2%;
+  }
+
+  .next{
+    position: absolute;
+    top: 45%;
+    right: 2%;
+  }
 }
 
 
 .activeImage__image{
   height: 300px;
 
+
   img{
     border-radius: 10px;
+  }
+
+  svg{
+    color: white;
   }
 }
 

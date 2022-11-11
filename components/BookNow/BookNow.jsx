@@ -10,7 +10,7 @@ const BookNow = () => {
       fontWeight: '500',
       borderRadius: '20px',
       padding: '0.5rem 2rem',
-      border: '2px solid var(--color-primary)',
+      // border: '2px solid var(--color-primary)',
 
       "&:hover": {
         backgroundColor: 'white',

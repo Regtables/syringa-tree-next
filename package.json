@@ -13,6 +13,7 @@
     "@emotion/styled": "^11.10.5",
     "@mui/material": "^5.10.11",
     "@sanity/client": "^3.4.1",
+    "framer-motion": "^7.6.5",
     "next": "13.0.0",
     "next-sanity-image": "^4.1.0",
     "react": "18.2.0",

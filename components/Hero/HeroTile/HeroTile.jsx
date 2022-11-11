@@ -7,7 +7,7 @@ import { client } from '../../../utils/client'
 import BookNow from '../../BookNow/BookNow'
 
 const HeroTile = ({ tile }) => {
-  const { image, title, testimonial, description } = tile
+  const { image, titlePrefix, title, testimonial, description } = tile
   const imageProps = useNextSanityImage(client, image)
 
   return (
@@ -24,17 +24,18 @@ const HeroTile = ({ tile }) => {
       </div>
       <div className= {styles.text}>
         <div className = {styles.testimonial}>
-        <h3>{`'${testimonial}'`}</h3>
+        {/* <h5>{`'${testimonial.length > 0 && testimonial}'`}</h5> */}
         </div>
         <div className = {styles.title}>
+          <h3>{titlePrefix}</h3>
           <h1>{title}</h1>
         </div>
         <div className= {styles.description}>
           <h4>{description}</h4>
         </div>
-        <div className= {styles.book}>
+        {/* <div className= {styles.book}>
           <BookNow />
-        </div>
+        </div> */}
       </div>
     </div>
   )

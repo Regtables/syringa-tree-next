@@ -10,6 +10,8 @@ import Location from '../components/Location/Location'
 import Contact from '../components/Contact/Contact'
 import Footer from '../components/Footer/Footer'
 
+import MotionWrapper from '../wrappers/MotionWrapper'
+
 export default function Home({ heroImages, sections, location, contact }) {
   
   return (
@@ -22,18 +24,24 @@ export default function Home({ heroImages, sections, location, contact }) {
       <main>
         {sections.map((section, i) => (
           <section id= {section.section} key = {i}>
-            <HouseSection 
-              section={section}
-            />
+            <MotionWrapper>
+              <HouseSection 
+                section={section}
+              />
+            </MotionWrapper>
           </section>
         ))}
        
         <section>
-          <Location location = {location} />
+          <MotionWrapper>
+            <Location location = {location} />
+          </MotionWrapper>
         </section>
 
         <section>
-          <Contact contact = {contact} />
+          <MotionWrapper>
+            <Contact contact = {contact} />
+          </MotionWrapper>
         </section>
 
         <footer>

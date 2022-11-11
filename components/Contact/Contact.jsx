@@ -1,7 +1,8 @@
 import React from 'react'
 import { AiOutlineMail } from 'react-icons/ai'
-import { BsPhone } from 'react-icons/bs'
-import { FaFacebookF } from 'react-icons/fa'
+import { BsTelephoneFill } from 'react-icons/bs'
+import { FaFacebookF, FaUser } from 'react-icons/fa'
+import { MdEmail } from 'react-icons/md'
 
 import styles from './Contact.module.scss'
 import ImageTile from '../ImageSelect/ImageTile/ImageTile'
@@ -9,7 +10,7 @@ import BookNow from '../BookNow/BookNow'
 
 const Contact = ({ contact }) => {
   console.log(contact)
-  const { image, phoneNumber, email, facebook } = contact
+  const { image, phoneNumber, email, facebook, host } = contact
 
   return (
     <div className = {`${styles.container} section__padding`}>
@@ -17,23 +18,27 @@ const Contact = ({ contact }) => {
         <h2>Contact Us</h2>
       </div>
       <div className = {styles.content}>
-        <div className= {styles.tagline}>
+        {/* <div className= {styles.tagline}>
           <p>We would love to hear from you</p>
-        </div>
+        </div> */}
         <div className= {styles.content_main}>
           <div className= {styles.left}>
             {/* <div className= {styles.title}>
               <p>Contact information</p>
             </div> */}
             <div className= {styles.slogan}>
-              <h3>Need anything?</h3>
+              <h2>Syringa Tree Guest House</h2>
+              <h3>22 Wessels Road <br /> Green Point <br /> Cape Town</h3>
             </div>
             <div className= {styles.details}>
-              <div className= {styles.item}>
-                <p><BsPhone /> {phoneNumber}</p>
+              <div className = {styles.item}>
+                <p><FaUser /> {host}</p>
               </div>
               <div className= {styles.item}>
-                <p><AiOutlineMail /> {email}</p>
+                <p><BsTelephoneFill /> {phoneNumber}</p>
+              </div>
+              <div className= {styles.item}>
+                <p><MdEmail/> {email}</p>
               </div>
               <div className= {styles.item}>
                 <p><FaFacebookF /> {facebook}</p>
@@ -44,9 +49,9 @@ const Contact = ({ contact }) => {
             </div> */}
           </div>
           <div className= {styles.right}>
-            <div className= {styles.title}>
+            {/* <div className= {styles.title}>
               <p>Your host</p>
-            </div>
+            </div> */}
             <div clasName = {styles.image} style = {{height: '90%'}}>
               <ImageTile image = {image} />
             </div>
