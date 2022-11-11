@@ -1,0 +1,49 @@
+.container{
+  background-color: var(--color-primary);
+
+  h2{
+    color: #f6f6f6;
+    margin: 0rem 0;
+  }
+}
+
+.content{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.slogan{
+  font-family: var(--font-family);
+  color: var(--color-offWhite);
+  font-style: italic;
+  text-align: center;
+}
+
+.text{
+  width: 80%;
+  text-align: center;
+
+  p{
+    font-family: var(--font-family);
+    color: var(--color-offWhite);
+  }
+
+  @media screen and (max-width: 450px) {
+    width: 100%;
+  }
+}
+
+.image{
+  position: relative;
+  height: 400px;
+  width: 70%;
+
+  img{
+    border-radius: 10px;
+  }
+
+  @media screen and (max-width: 450px) {
+    width: 100%;
+  }
+}

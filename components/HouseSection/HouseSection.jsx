@@ -33,7 +33,11 @@ const HouseSection = ({ section }) => {
               <Amenities amenities={amenities} />
             </div>
             <div className= {styles.description}>
-              <p>{description}</p>
+              {description.map((para, i) => (
+                <>
+                  <p>{para.children[0].text}</p>
+                </>
+              ))}
             </div>
           </div>
         </div>

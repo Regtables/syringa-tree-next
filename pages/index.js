@@ -8,11 +8,12 @@ import Hero from '../components/Hero/Hero'
 import HouseSection from '../components/HouseSection/HouseSection'
 import Location from '../components/Location/Location'
 import Contact from '../components/Contact/Contact'
+import AboutUs from '../components/AboutUs/AboutUs'
 import Footer from '../components/Footer/Footer'
 
 import MotionWrapper from '../wrappers/MotionWrapper'
 
-export default function Home({ heroImages, sections, location, contact }) {
+export default function Home({ heroImages, sections, location, contact, about }) {
   
   return (
     <div className={styles.container} id = 'home'>
@@ -46,6 +47,12 @@ export default function Home({ heroImages, sections, location, contact }) {
           </MotionWrapper>
         </section>
 
+        <section id = 'about-us'>
+          <MotionWrapper>
+            <AboutUs aboutUs={about}/>
+          </MotionWrapper>
+        </section>
+        
         <footer>
           <Footer />
         </footer>
@@ -67,12 +74,16 @@ export const getStaticProps = async () => {
   const contactQuery = '*[_type == "contact"]'
   const contactData = await client.fetch(contactQuery)
 
+  const aboutQuery = '*[_type == "aboutUs"]'
+  const aboutData = await client.fetch(aboutQuery)
+
   return {
     props: {
       heroImages: heroData,
       sections: sectionsData,
       location: locationData[0],
-      contact: contactData[0]
+      contact: contactData[0],
+      about: aboutData[0]
     },
     revalidate: 1
   }

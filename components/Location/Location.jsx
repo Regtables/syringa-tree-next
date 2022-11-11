@@ -7,7 +7,7 @@ import styles from './Location.module.scss';
 import QuiltedImageList from './QuiltedImageList/QuiltedImageList';
 
 const Location = ({ location }) => {
-  const { images } = location
+  const { images, slogan } = location
 
 	return (
 		<div className={`${styles.container} section__padding`}>
@@ -16,7 +16,7 @@ const Location = ({ location }) => {
 			</div>
 			<div className={styles.content}>
 				<div className = {styles.description}>
-          <p>Discover beautiful Cape Town and its wonders, just around the corner.</p>
+          <p>{slogan}</p>
         </div>
 				<div className={styles.content_main}>
 					<div className={styles.left}>
