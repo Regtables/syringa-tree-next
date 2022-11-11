@@ -17,9 +17,11 @@ export default function Home({ heroImages, sections, location, contact }) {
   return (
     <div className={styles.container} id = 'home'>
       <header id = 'home'>
-        <Hero
-          images = {heroImages}
-        />
+        <MotionWrapper>
+          <Hero
+            images = {heroImages}
+          />
+        </MotionWrapper>
       </header>
       <main>
         {sections.map((section, i) => (
