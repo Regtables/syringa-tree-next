@@ -20,7 +20,7 @@ const AboutUs = ({ aboutUs }) => {
         </div>
         <div className = {styles.text}>
           {text.map((para, i) => (
-            <p>{para.children[0].text}</p>
+            <p key = {i}>{para.children[0].text}</p>
           ))}
         </div>
         
