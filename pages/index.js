@@ -15,7 +15,7 @@ import MotionWrapper from '../wrappers/MotionWrapper'
 export default function Home({ heroImages, sections, location, contact }) {
   
   return (
-    <div className={styles.container}>
+    <div className={styles.container} id = 'home'>
       <header id = 'home'>
         <Hero
           images = {heroImages}
@@ -32,13 +32,13 @@ export default function Home({ heroImages, sections, location, contact }) {
           </section>
         ))}
        
-        <section>
+        <section id = 'location'>
           <MotionWrapper>
             <Location location = {location} />
           </MotionWrapper>
         </section>
 
-        <section>
+        <section id = 'contact-us'>
           <MotionWrapper>
             <Contact contact = {contact} />
           </MotionWrapper>

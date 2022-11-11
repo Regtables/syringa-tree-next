@@ -7,11 +7,11 @@ import styles from './HouseSection.module.scss'
 import Amenities from './Amenities/Amenities'
 
 const HouseSection = ({ section }) => {
-  const { heading, slogan, images, description, amenities } = section
+  const { heading, slogan, images, description, amenities, slug } = section
 
   console.log(section)
   return (
-    <div className= {`${styles.container} section__padding`}>
+    <div className= {`${styles.container} section__padding`} id = {slug?.current}>
       <header className= 'heading'>
         <h2>{heading}</h2>
       </header>

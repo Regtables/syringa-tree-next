@@ -10,7 +10,7 @@ const Location = ({ location }) => {
   const { images } = location
 
 	return (
-		<div className={`${styles.container} section__padding`} id = 'location'>
+		<div className={`${styles.container} section__padding`}>
 			<div className= 'heading'>
 				<h2>The Location</h2>
 			</div>

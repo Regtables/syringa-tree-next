@@ -20,23 +20,29 @@ const LINKS = [
   // },
   {
     link: 'main house',
-    icon: <AiOutlineHome />
+    icon: <AiOutlineHome />,
+    slug: 'main-house'
   },
   {
     link: 'sea view',
-    icon: <BiHomeCircle />
+    icon: <BiHomeCircle />,
+    slug: 'sea-view'
   },
   {
     link: 'location',
-    icon: <GoLocation />
+    icon: <GoLocation />,
+    slug: 'location'
   },
   {
-    link: 'contact',
-    icon: <AiOutlinePhone />
+    link: 'contact us',
+    icon: <AiOutlinePhone />,
+    slug: 'contact-us'
+
   },
   {
     link: 'about us',
-    icon: <AiOutlineUser />
+    icon: <AiOutlineUser />,
+    slug: 'about-us'
   }
 ]
 
@@ -106,13 +112,13 @@ const Navbar = () => {
   return (
     <div className= {styles.container} id = 'navbar'>
       <div className= {styles.logo}>
-        <h3>Syringa tree Guest House</h3>
+        <a href = '#home'><h3>Syringa tree Guest House</h3></a>
         {/* <GiPineTree /> */}
       </div>
       <div className= {styles.links}>
         {LINKS.map((link, i) => (
           <div className= {styles.link} key = {i}>
-            <a href = {`#${link.link}`}><p>{link.link}</p></a>
+            <a href = {`#${link.slug}`}><p>{link.link}</p></a>
           </div>
         ))}
         <div className= {styles.book}>
@@ -140,8 +146,8 @@ const Navbar = () => {
               </div>
               <div className = {styles.mobile_links}>
                 {LINKS.map((link, i) => (
-                  <div className = {styles.mobile_link}>
-                    <a href = {`#${link.link}`}>
+                  <div className = {styles.mobile_link} onClick = {handleMenuClose}>
+                    <a href = {`#${link.slug}`} key = {i}>
                       <h5>{link.icon}{link.link}</h5>
                     </a>
                   </div>  
