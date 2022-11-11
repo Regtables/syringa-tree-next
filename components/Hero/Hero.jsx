@@ -56,6 +56,7 @@ const Hero = ({ images }) => {
           <div 
             className = {`${styles.count} ${i === index ? styles.activeIndex : ''}`} 
             onClick = {() => handleCountClick(i)}
+            key = {i}
           />
         ))}
       </div>
