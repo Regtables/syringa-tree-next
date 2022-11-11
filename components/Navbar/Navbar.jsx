@@ -146,8 +146,8 @@ const Navbar = () => {
               </div>
               <div className = {styles.mobile_links}>
                 {LINKS.map((link, i) => (
-                  <div className = {styles.mobile_link} onClick = {handleMenuClose}>
-                    <a href = {`#${link.slug}`} key = {i}>
+                  <div className = {styles.mobile_link} onClick = {handleMenuClose} key = {i}>
+                    <a href = {`#${link.slug}`} >
                       <h5>{link.icon}{link.link}</h5>
                     </a>
                   </div>  
