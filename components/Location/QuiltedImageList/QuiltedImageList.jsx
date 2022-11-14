@@ -21,7 +21,7 @@ const QuiltedImageList = ({ images }) => {
               <ImageTile image= {image5} />
             </div>
             <div className = {styles.bottom_right_bottom}>
-              <ImageTile image = {image4} />
+              <ImageTile image = {image4} imagePos = 'center 28%' />
             </div>
           </div>
         </div>

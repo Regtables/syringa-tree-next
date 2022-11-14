@@ -5,7 +5,7 @@ import { useNextSanityImage } from 'next-sanity-image'
 import { client } from '../../../utils/client'
 import styles from './ImageTile.module.scss'
 
-const ImageTile = ({ image }) => {
+const ImageTile = ({ image, imagePos }) => {
   const imageProps = useNextSanityImage(client, image)
   
   return (
@@ -14,6 +14,7 @@ const ImageTile = ({ image }) => {
         { ...imageProps }
         layout = 'fill'
         objectFit= 'cover'
+        objectPosition= {imagePos}
       />
     </div>
   )

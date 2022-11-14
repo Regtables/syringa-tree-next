@@ -18,6 +18,7 @@ export default function Home({ heroImages, sections, location, contact, about, s
   return (
     <>
       <Head>
+        <link rel='icon' href='/flavicon.jpeg' />
         <title>{seo.title}</title>
         <meta name = 'description' content= {seo.description}/>
         <meta name = 'keywords' content = {seo.keywords} />

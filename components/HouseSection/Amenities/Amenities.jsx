@@ -19,27 +19,27 @@ const Amenities = ({ amenities }) => {
   return (
     <Grid container className= {styles.container} justifyContent = 'space-between' >
       <Grid item sm = {6} xs = {6}>
-        <p className= {styles.feature}><BiBed /> {bedrooms} bedrooms</p>
+        <p className= {styles.feature}><BiBed /> {bedrooms} Bedrooms</p>
       </Grid>
       <Grid item sm = {6} xs = {6}>
         <p className= {styles.feature}><BiBath /> {bathrooms} {bathrooms < 2 ? 'Bathroom' : 'Bathrooms' }</p>
       </Grid>
       <Grid item sm = {6} xs = {6}>
-        <p className= {styles.feature}> <TbToolsKitchen2 /> self catering</p>
+        <p className= {styles.feature}> <TbToolsKitchen2 /> Self Catering</p>
       </Grid>
       <Grid item sm = {6} xs = {6}>
-        <p className= {styles.feature}> <IoWifiSharp /> wifi included</p>
+        <p className= {styles.feature}> <IoWifiSharp /> Wifi Included</p>
       </Grid>
       {parking ? (
         <Grid item sm = {6} xs = {6}>
-            <p className= {styles.feature}> <AiOutlineCar /> parking</p>
+            <p className= {styles.feature}> <AiOutlineCar /> Parking</p>
         </Grid>
       ) : (
         <></>
       )}
       <Grid item sm = {6} xs = {6}>
         {entrace ? (
-          <p className= {styles.feature}> <BsDoorOpen /> seperate entrance</p>
+          <p className= {styles.feature}> <BsDoorOpen /> Seperate Entrance</p>
         ) :(
           <p className= {styles.feature}> <TbDoorOff/> no seperate entrance</p>
         )}

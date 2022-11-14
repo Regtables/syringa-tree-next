@@ -1,7 +1,6 @@
 import React, { useState , useEffect} from 'react'
-import Image from 'next/legacy/image'
-import { Grid } from '@mui/material'
 import { IoIosArrowDropleftCircle, IoIosArrowDroprightCircle } from 'react-icons/io'
+import { motion } from 'framer-motion'
 
 import styles from './ImageSelect.module.scss'
 
@@ -12,9 +11,18 @@ const ImageSelect = ({ images }) => {
   const [activeImage, setActiveImage] = useState(images[0])
   const [togglePreview, setTogglePreview] = useState(false)
   const [index, setIndex] = useState(0)
+  const [animateActiveImage, setAnimateActiveImage] = useState({})
 
   useEffect(() => {
-    setActiveImage(images[index])
+    setAnimateActiveImage({opacity: 0})
+
+    setTimeout(() => {
+      setActiveImage(images[index])
+    }, 300);
+
+    setTimeout(() => {
+      setAnimateActiveImage({opacity: 1})
+    }, 300);
   }, [index])
 
 
@@ -35,7 +43,7 @@ const ImageSelect = ({ images }) => {
   }
 
   const handleImageSelect = (image, i) => {
-    setActiveImage(image)
+    // setActiveImage(image)
     setIndex(i)
   }
 
@@ -43,9 +51,14 @@ const ImageSelect = ({ images }) => {
     <>
       <div className= {styles.container}>
         <div className = {styles.activeImage}>
-          <div className = {styles.activeImage__image} onClick = {() => setTogglePreview(true)}>
+          <motion.div 
+            className = {styles.activeImage__image}
+            onClick = {() => setTogglePreview(true)}
+            animate = {animateActiveImage}
+            transition = {{duration: 0.4}}
+          >
             <ImageTile image={activeImage}/>
-          </div>
+          </motion.div>
           <div className = {styles.prev} onClick = {handlePrev}>
             <IoIosArrowDropleftCircle />
           </div>
