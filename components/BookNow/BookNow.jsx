@@ -17,7 +17,7 @@ const BookNow = () => {
         color: 'var(--color-primary)'
       }
     }}>
-      request booking
+     <a href = 'https://book.nightsbridge.com/33277' target = '_blank'>Request booking</a>
     </Button>
   )
 }

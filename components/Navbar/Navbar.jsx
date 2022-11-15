@@ -176,7 +176,7 @@ const Navbar = () => {
                 }
               }}
             >
-              Book Now
+             <a href = 'Book Now' target = '_blank' rel = ''>Book Now</a> 
             </Button>
           </div>
         </motion.div>
