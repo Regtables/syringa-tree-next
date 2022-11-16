@@ -25,6 +25,7 @@ export default function Home({ heroImages, sections, location, contact, about, s
       <title>{seo.title}</title>
       <meta name = 'description' content= {seo.description}/>
       <meta name = 'keywords' content = {seo.keywords} />
+      <meta name="google-site-verification" content="66ScaDVjb8CzBOwiTzXf1i3OZIRfkQeyQtRhZMEw1A8" />
       </Head>
       <div className={styles.container} id = 'home'>
         <header id = 'home'>
