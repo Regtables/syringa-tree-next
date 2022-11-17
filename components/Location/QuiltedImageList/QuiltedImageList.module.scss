@@ -48,19 +48,19 @@
       flex-direction: column;
 
       .bottom_right_top{
-        flex: 0.5;
+        flex: 1;
         width: 100%;
         height: 100%;
-        margin-bottom: 0.5rem;
+        // margin-bottom: 0.5rem;
         // box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
       }
 
-      .bottom_right_bottom{
-        flex: 0.5;
-        width: 100%;
-        height: 100%;
-        // box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
-      }
+      // .bottom_right_bottom{
+      //   flex: 0.5;
+      //   width: 100%;
+      //   height: 100%;
+      //   // box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+      // }
     }
   }
 }

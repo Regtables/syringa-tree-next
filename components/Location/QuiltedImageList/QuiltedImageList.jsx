@@ -51,9 +51,9 @@ const QuiltedImageList = ({ images }) => {
             <div className = {styles.bottom_right_top} onClick = {() => handleClick(image5)}>
               <ImageTile image= {image5} />
             </div>
-            <div className = {styles.bottom_right_bottom} onClick = {() => handleClick(image4)}>
+            {/* <div className = {styles.bottom_right_bottom} onClick = {() => handleClick(image4)}>
               <ImageTile image = {image4} imagePos = 'center 28%' />
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
