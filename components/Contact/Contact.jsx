@@ -41,7 +41,9 @@ const Contact = ({ contact }) => {
                 <p><MdEmail/> {email}</p>
               </div>
               <div className= {styles.item}>
-                <p><FaFacebookF /> {facebook}</p>
+                <a href = 'https://www.facebook.com/profile.php?id=100087755416304' target = '_blank' rel="noreferrer">
+                  <p><FaFacebookF /> {facebook}</p>
+                </a>
               </div>
             </div>
             {/* <div className = {styles.book}>
